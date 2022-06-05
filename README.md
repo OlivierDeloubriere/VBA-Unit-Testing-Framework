@@ -4,7 +4,7 @@ This project is aimed at building a framework for automatic unit testing in Exce
 
 ## Unit testing principles
 
-Tests should be easy and obvious to write and read. This framework with fluent keywords. Here is an example:
+Writing (or reading) tests should be easy and obvious. This framework with fluent keywords. Here is an example:
 
 ```vb
 Assert.Test("The variable x should take the value 1").Expect(x).ToBeEqualTo(1)
@@ -35,7 +35,7 @@ The test are run by executing a ````Sub```` written in a simple module. Inside t
 
 ### Example
 
-The test will be run by executing the macro ```RunTests()```:
+The test here will be run by executing the macro ``RunTests()``:
 
 ```vb
 Public Sub RunTests()
