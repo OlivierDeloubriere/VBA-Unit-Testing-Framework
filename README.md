@@ -35,9 +35,10 @@ The test are run by executing a ````Sub```` written in a simple module. Inside t
 
 ### Example
 
-The test here will be run by executing the macro ``RunTests()``:
+The test here will be run by executing the following macro ``RunTests()``:
 
 ```vb
+'This code can be placed in a Standard Module
 Public Sub RunTests()
     With New TestRunner
         .AddTestSuite "myTestingModule"
