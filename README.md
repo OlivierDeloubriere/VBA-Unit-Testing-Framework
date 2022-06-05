@@ -1,10 +1,10 @@
 # VBA Unit Testing Framework
 
-This project is aimed at building a framework for automatic unit testing in Excel VBa projects using best OOP practices and Clean Code (design patterns, SOLID principles...)
+This project is aimed at building a framework for automatic unit testing in Excel VBA projects using best OOP practices and Clean Code (design patterns, SOLID principles...)
 
 ## Unit testing principles
 
-Writing (or reading) tests should be easy and obvious. This framework with fluent keywords. Here is an example:
+Writing (or reading) unit tests should be easy and obvious. This framework provides the user with fluent keywords, reminiscent of what can be found in modern JavaScript or Java testing frameworks. Here is an example:
 
 ```vb
 Assert.Test("The variable x should take the value 1").Expect(x).ToBeEqualTo(1)
@@ -13,14 +13,14 @@ Assert.Test("The variable x should take the value 1").Expect(x).ToBeEqualTo(1)
 The test will return one of the three outcomes:
 - ```PASS``` if the test passes,
 - ```FAIL``` if the test fails,
-- ```INCONCLUSIVE``` if the test cannot be evaluated.
+- and ```INCONCLUSIVE``` if the test cannot be evaluated.
 
 In the above example if the variable  ```x``` is not a number, then the result of the test will be ```INCONCLUSIVE```.
 
 ## Test result output
 
 The results of the tests can be read via two different output methods:
-- In the ugly VBE immediate window
+- In the ugly VBE immediate window (here with customized dark color theme)
 
 <img src="./capture_VBE_Immediate_Window.jpg"/>
 
@@ -47,45 +47,51 @@ End Sub
 
 Public Sub myTestingModule()
     Dim x As Integer
-    Assert.test("The variable x should be equal to 1").Expect(x).ToEqual (1)
+    Assert.Test("The variable x should be equal to 1").Expect(x).ToEqual(1)
 End Sub
 ```
-A ```TestRunner``` object can have as many test suites as desired. Every test suite ```Sub``` can have as many ```Assert``` commands as desired.
+Many different test suites can be added one after the other to the ```TestRunner``` object. Every test suite ```Sub``` can have as many ```Assert``` commands as necessary.
 
+Test suites can be seen as tests subcategories each containing a list of individual tests.
 
 ## API
 
-The Assert object can be described using the .Test method
+A unit test can be described (or labeled) by using the ```.Test``` method of the ```Assert``` object:
+
 ```vb 
 .Test(ByVal descriptionText as String)
 ```
 
-This method is optional.
+(this method is optional).
 
-The ExpectedAssert object
-
-Available tests comparison methods
+Then one specifies the variable or object, whose value or property or method must be tested, with the method ```.Expect``` of the ```Assert``` object:
 
 ```vb
-.ToEqual(byVal value as variant)
+Assert.Expect(byVal computedVariant as Variant)
+```
+
+Finally, one specifies the actual test to be run on the ```.Expect```ed variable, with the following tests comparison methods:
+
+```vb
+.ToEqual(byVal expectedValue as variant)
 ```
 ```vb
-.ToBeDifferentFrom(byVal value as variant)
+.ToBeDifferentFrom(byVal expectedValue as variant)
 ```
 ```vb
-.ToBeLargerThan(byVal value as variant)
+.ToBeLargerThan(byVal expectedValue as variant)
 ```
 ```vb
-.ToBeLargerOrEqualTo(byVal value as variant)
+.ToBeLargerOrEqualTo(byVal expectedValue as variant)
 ```
 ```vb
-.ToBeSmallerThan(byVal value as variant)
+.ToBeSmallerThan(byVal expectedValue as variant)
 ```
 ```vb
-.ToBeSmallerOrEqualTo(byVal value as variant)
+.ToBeSmallerOrEqualTo(byVal expectedValue as variant)
 ```
 ```vb
-.ToHaveMethod(byval methodName as string)
+.ToHaveMethod(byval expectedValue as string)
 ```
 ```vb
 .ToBeTrue()
