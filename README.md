@@ -24,7 +24,7 @@ The results of the tests can be read via two different output methods:
 
 <img src="./capture_VBE_Immediate_Window.jpg"/>
 
-- In a *much prettier* userform, that plays the role of a custom console (providing with the text formatting options that are lacking in the VBE debug immediate window)
+- In a *much prettier* userform, that plays the role of a custom console (with text formatting options that are lacking in the VBE debug immediate window)
 
 <img src="./capture_Custom_Console.jpg"/>
 
