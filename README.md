@@ -71,7 +71,7 @@ Then one specifies the variable or object, whose value or property or method mus
 Assert.Expect(ByVal computedVariant as Variant)
 ```
 
-Finally, one specifies the actual test to be run on the ```.Expect```ed variable, with the following tests comparison methods:
+Finally, one specifies the actual test to be run with the following tests comparison methods:
 
 ```vb
 .ToEqual(ByVal expectedValue as Variant)
@@ -92,7 +92,7 @@ Finally, one specifies the actual test to be run on the ```.Expect```ed variable
 .ToBeSmallerOrEqualTo(ByVal expectedValue as Variant)
 ```
 ```vb
-.ToHaveMethod(ByVal expectedValue as string)
+.ToHaveMethod(ByVal expectedValue as String)
 ```
 ```vb
 .ToBeTrue()
