@@ -20,11 +20,11 @@ In the above example if the variable  ```x``` is not a number, then the result o
 ## Test result output
 
 The results of the tests can be read via two different output methods:
-- In the ugly VBE immediate window (here with customized dark color theme)
+- In the *ugly* VBE immediate window (here with customized dark color theme)
 
 <img src="./capture_VBE_Immediate_Window.jpg"/>
 
-- In a beautiful userform, that plays the role of a custom console (providing with text formatting options lacking in the VBE debug immediate window
+- In a *much prettier* userform, that plays the role of a custom console (providing with text formatting options lacking in the VBE debug immediate window
 
 <img src="./capture_Custom_Console.jpg"/>
 
