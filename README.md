@@ -68,31 +68,31 @@ A unit test can be described (or labeled) by using the ```.Test``` method of the
 Then one specifies the variable or object, whose value or property or method must be tested, with the method ```.Expect``` of the ```Assert``` object:
 
 ```vb
-Assert.Expect(byVal computedVariant as Variant)
+Assert.Expect(ByVal computedVariant as Variant)
 ```
 
 Finally, one specifies the actual test to be run on the ```.Expect```ed variable, with the following tests comparison methods:
 
 ```vb
-.ToEqual(byVal expectedValue as variant)
+.ToEqual(ByVal expectedValue as Variant)
 ```
 ```vb
-.ToBeDifferentFrom(byVal expectedValue as variant)
+.ToBeDifferentFrom(ByVal expectedValue as Variant)
 ```
 ```vb
-.ToBeLargerThan(byVal expectedValue as variant)
+.ToBeLargerThan(ByVal expectedValue as Variant)
 ```
 ```vb
-.ToBeLargerOrEqualTo(byVal expectedValue as variant)
+.ToBeLargerOrEqualTo(ByVal expectedValue as Variant)
 ```
 ```vb
-.ToBeSmallerThan(byVal expectedValue as variant)
+.ToBeSmallerThan(ByVal expectedValue as Variant)
 ```
 ```vb
-.ToBeSmallerOrEqualTo(byVal expectedValue as variant)
+.ToBeSmallerOrEqualTo(ByVal expectedValue as Variant)
 ```
 ```vb
-.ToHaveMethod(byval expectedValue as string)
+.ToHaveMethod(ByVal expectedValue as string)
 ```
 ```vb
 .ToBeTrue()
