@@ -29,7 +29,7 @@ The results of the tests can be read via two different output methods:
 <img src="./capture_Custom_Console.jpg"/>
 
 ## Running the tests
-The test are run by executing a ````Sub```` written in a simple module. Inside this ````Sub```` should be defined a ```TestRunner``` object. This object have two important methods:
+The tests are run by executing a ````Sub```` written in a standard module. Inside this ````Sub```` should be defined a ```TestRunner``` object. This object has two important methods:
 - ```.AddTestSuite(ByVal macroName as string)``` specifies the name of the ````Sub```` containing the ````Assert```` commands
 - ````.Run```` which starts the whole testing process
 
