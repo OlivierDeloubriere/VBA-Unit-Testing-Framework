@@ -17,6 +17,7 @@ Public Sub OutputTestResults(ByVal tRunner As TestRunner, cTimer As CustomTimer)
         .Height = DEFAULT_CONSOLE_HEIGHT
         .Width = DEFAULT_CONSOLE_WIDTH
         .ScrollHeight = (.consoleListOfLines.Count + 2) * DEFAULT_CONSOLE_LINE_HEIGHT
+        .ScrollTop = .ScrollHeight
         .Caption = "Test Output Console"
         .Show
     End With

@@ -27,6 +27,17 @@ Private Sub testingAgain()
 End Sub
 Private Sub testingToSuccess()
     Assert.test("Now we are sussessful!!!").Expect(True).ToBeTrue
+    Assert.test("True is different from True should fail").Expect(True).ToBeDifferentFrom (True)
+    Assert.test("True is False should fail").Expect(True).ToBeFalse
+    Assert.test("True is True should pass").Expect(False).ToBeFalse
+    Assert.test("1 is larger or equal to 1 should pass").Expect(1).ToBeLargerOrEqualTo (1)
+    Assert.test("1 is larger than 1 should fail").Expect(1).ToBeLargerThan (1)
+    Assert.test("1 is larger or equal to 0 should pass").Expect(1).ToBeLargerOrEqualTo (0)
+    Assert.test("1 is larger than 0 should pass").Expect(1).ToBeLargerThan (0)
+    Assert.test("1 is smaller or equal to 1 should pass").Expect(1).ToBeSmallerOrEqualTo (1)
+    Assert.test("1 is smaller than 1 should fail").Expect(1).ToBeSmallerThan (1)
+    Assert.test("1 is smaller or equal to 2 should pass").Expect(1).ToBeSmallerOrEqualTo (2)
+    Assert.test("1 is smaller than 2 should pass").Expect(1).ToBeSmallerThan (2)
 End Sub
 Public Sub testGlobal()
     With New TestRunner

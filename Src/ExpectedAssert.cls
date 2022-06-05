@@ -24,6 +24,7 @@ End Property
 Private Sub Class_Initialize()
     Set this.result = New testResult
 End Sub
+
 Public Sub ToEqual(ByVal expectedValue As Variant)
     this.result.expectedValue = expectedValue
     If Not this.result.computedValue = this.result.expectedValue Then
@@ -37,13 +38,65 @@ Public Sub ToEqual(ByVal expectedValue As Variant)
     
     OutPutTest this.result
 End Sub
+Public Sub ToBeDifferentFrom(ByVal expectedValue As Variant)
+    this.result.expectedValue = expectedValue
+    If this.result.computedValue = this.result.expectedValue Then
+        this.result.status = Fail
+        this.result.resultDescription = this.result.computedValue & " should be different from " & this.result.expectedValue
+    End If
+    If Not this.result.computedValue = this.result.expectedValue Then
+        this.result.status = Pass
+        this.result.resultDescription = ""
+    End If
+    
+    OutPutTest this.result
+End Sub
 Public Sub ToBeLargerThan(ByVal expectedValue As Variant)
     this.result.expectedValue = expectedValue
-    If Not this.result.computedValue <= this.result.expectedValue Then
+    If Not this.result.computedValue > this.result.expectedValue Then
         this.result.status = Fail
         this.result.resultDescription = this.result.computedValue & " should be larger than " & this.result.expectedValue
     End If
     If this.result.computedValue > this.result.expectedValue Then
+        this.result.status = Pass
+        this.result.resultDescription = ""
+    End If
+    
+    OutPutTest this.result
+End Sub
+Public Sub ToBeLargerOrEqualTo(ByVal expectedValue As Variant)
+    this.result.expectedValue = expectedValue
+    If Not this.result.computedValue >= this.result.expectedValue Then
+        this.result.status = Fail
+        this.result.resultDescription = this.result.computedValue & " should be larger or equal to " & this.result.expectedValue
+    End If
+    If this.result.computedValue >= this.result.expectedValue Then
+        this.result.status = Pass
+        this.result.resultDescription = ""
+    End If
+    
+    OutPutTest this.result
+End Sub
+Public Sub ToBeSmallerThan(ByVal expectedValue As Variant)
+    this.result.expectedValue = expectedValue
+    If Not this.result.computedValue > this.result.expectedValue Then
+        this.result.status = Fail
+        this.result.resultDescription = this.result.computedValue & " should be smaller than " & this.result.expectedValue
+    End If
+    If this.result.computedValue < this.result.expectedValue Then
+        this.result.status = Pass
+        this.result.resultDescription = ""
+    End If
+    
+    OutPutTest this.result
+End Sub
+Public Sub ToBeSmallerOrEqualTo(ByVal expectedValue As Variant)
+    this.result.expectedValue = expectedValue
+    If Not this.result.computedValue <= this.result.expectedValue Then
+        this.result.status = Fail
+        this.result.resultDescription = this.result.computedValue & " should be smaller or equal to " & this.result.expectedValue
+    End If
+    If this.result.computedValue <= this.result.expectedValue Then
         this.result.status = Pass
         this.result.resultDescription = ""
     End If
@@ -92,7 +145,27 @@ Public Sub ToBeSomething()
     
     OutPutTest this.result
 End Sub
-
+Public Sub ToBeFalse()
+    If Not VarType(this.result.computedValue) = vbBoolean Then
+        this.result.status = Inconclusive
+        this.result.resultDescription = "Computed value is not a boolean expression"
+        OutPutTest this.result
+        Exit Sub
+    End If
+    
+    If this.result.computedValue Then
+        this.result.status = Fail
+        this.result.resultDescription = "Computed value is True but should be False"
+    End If
+    
+    If Not this.result.computedValue Then
+        this.result.status = Pass
+        this.result.resultDescription = ""
+    End If
+    
+    OutPutTest this.result
+    
+End Sub
 Public Sub ToBeTrue()
     If Not VarType(this.result.computedValue) = vbBoolean Then
         this.result.status = Inconclusive
