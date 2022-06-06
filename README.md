@@ -1,6 +1,8 @@
 # VBA Unit Testing Framework
 
-This project is aimed at building a framework for automatic unit testing in Excel VBA projects using best OOP practices and Clean Code (design patterns, SOLID principles...)
+This project is aimed at building a framework for automatic unit testing in Excel VBA projects using best OOP practices and Clean Code (design patterns, SOLID principles...).
+
+The project is for the moment a WIP.
 
 ## Unit testing principles
 
