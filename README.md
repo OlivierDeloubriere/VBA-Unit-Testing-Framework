@@ -9,7 +9,7 @@ The project is for the moment a WIP.
 Writing (or reading) unit tests should be easy and obvious. This framework provides the user with fluent keywords, reminiscent of what can be found in modern JavaScript or Java testing frameworks. Here is an example:
 
 ```vb
-Assert.Test("The variable x should take the value 1").Expect(x).ToBeEqualTo(1)
+Assert.Test("The variable x should take the value 1").Expect(x).ToEqual(1)
 ```
 
 The test will return one of the three outcomes:
